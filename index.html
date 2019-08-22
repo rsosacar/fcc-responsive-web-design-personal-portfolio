@@ -2,6 +2,7 @@
 <html>
 	<head>
         <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/5158917d78.js"></script>
     	<style type="text/css">
             html {
                 font-family: 'Roboto', sans-serif;
@@ -20,10 +21,60 @@
             }
 
             hr {
-                height: 3px;
-                color: #00bfa5;
-                background-color: #00bfa5;
+                height: 10px;
                 border: none;
+                background: linear-gradient(90deg, #42a5f5, #00bfa5);
+                border-radius: 20px;
+            }
+
+            .bot-left {
+              position: relative;
+            }
+
+            .bot-left:before, .bot-left:after {
+              content: "";
+              position: absolute;
+              bottom: -3px;
+              left: -3px;
+              
+            }
+
+            .bot-left:before {
+              top: -3px;
+              width: 3px;
+              background-image: -webkit-gradient(linear, 0 100%, 0 0, from(#42a5f5), to(#00bfa5), to(transparent));
+              background-image: -webkit-linear-gradient(transparent, #00bfa5, #42a5f5);
+              background-image: -moz-linear-gradient(transparent, #00bfa5, #42a5f5);
+              background-image: -o-linear-gradient(transparent, #00bfa5, #42a5f5);
+            }
+
+            .bot-left:after {
+              right: -3px;
+              height: 3px;
+              background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#42a5f5), to(#00bfa5), to(transparent));
+              background-image: -webkit-linear-gradient(left, #42a5f5, #00bfa5, transparent);
+              background-image: -moz-linear-gradient(left, #42a5f5, #00bfa5, transparent);
+              background-image: -o-linear-gradient(left, #42a5f5, #00bfa5, transparent);
+            }
+
+            .bot {
+              position: relative;
+            }
+
+            .bot:before, .bot:after {
+              content: "";
+              position: absolute;
+              bottom: -3px;
+              left: -3px
+            }
+
+            .bot:after {
+              right: -3px;
+              height: 3px;
+              background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#42a5f5), to(#00bfa5), to(transparent));
+              background-image: -webkit-linear-gradient(left, #42a5f5, #00bfa5, transparent);
+              background-image: -moz-linear-gradient(left, #42a5f5, #00bfa5, transparent);
+              background-image: -o-linear-gradient(left, #42a5f5, #00bfa5, transparent);
             }
 
             #navbar {
@@ -65,6 +116,10 @@
                 margin: 0px;
             }
 
+            .link-icon {
+                color: #00bfa5;
+            }
+
             #welcome-img-div {
                 text-align: center;
             }
@@ -78,8 +133,6 @@
             }
 
             .project-tile {
-                border-radius: 3px;
-                border: 1px solid black;
                 padding: 20px;
                 margin: auto;
                 max-width: 90%;
@@ -113,6 +166,10 @@
                 position: relative;
                 background: #f3efe6;
                 overflow: hidden;
+                border-radius: 20px;
+                float: right;
+                width: 80%;
+                margin-top: 15px;
             }
 
             .skill-bg span {
@@ -138,12 +195,25 @@
               100% { width: 100%; }
             }
 
-            #projects {
-                background-color: #f3efe6;
-            }
-
             .section-title {
                 text-align: center;
+                padding-top: 20px;
+            }
+
+            .skill p {
+                font-weight: bold;
+                float: left;
+                font-size: larger;
+            }
+
+            .email {
+                font-weight: bold;
+                font-size: large;
+            }
+
+            footer {
+                 text-align: center;
+                 font-size: 11px;
             }
 
             @media (min-width: 960px){
@@ -172,11 +242,11 @@
   	<body>
         <nav id="navbar">
             <div id="navbar-left">
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
+                <a href="#projects"><i class="fas fa-project-diagram"></i>&nbsp;&nbsp;Projects</a>
+                <a href="#skills"><i class="fas fa-book"></i>&nbsp;&nbsp;Skills</a>
             </div>
         </nav>
-    	<section id="welcome-section">
+    	<section id="welcome-section" class="bot">
             <div id="welcome-img-div">
                 <img src="images/logo_rs.png" id="welcome-img">
             </div>
@@ -186,8 +256,8 @@
                     <hr>
                 </h1>      
             </div>
-            <p class="center_par">rsosacar@gmail.com</p>
-            <p class="center_par"><a href="https://github.com/rsosacar" target="_blank" id="profile-link">GitHub</a><p>
+            <p class="center_par email">rsosacar@gmail.com</p>
+            <p class="center_par"><a href="https://github.com/rsosacar" target="_blank" id="profile-link"><i class="fab fa-github fa-3x link-icon"></i></a><a href="https://www.freecodecamp.org/rsosacar" target="_blank"><i class="fab fa-free-code-camp fa-3x link-icon"></i></a><a href="https://rsosacar.github.io/index2.html" target="_blank"><i class="fas fa-link fa-3x link-icon"></i></a><p>
         </section>
         <section id="projects">
             <div class="section-title">
@@ -197,12 +267,12 @@
                 </h2>
             </div>
             <div id="projects-div">
-                <div class="project-tile">
+                <div class="project-tile bot-left">
                     <h3>Empléate</h3>
                     <p>Venezuelan company on HR management services</p>
-                    <a href="https://www.empleate.com/"><img src="images/empleate.jpg"></a>
+                    <a href="https://www.empleate.com/" target="_blank"><img src="images/empleate.jpg"></a>
                 </div>
-                <div class="project-tile">
+                <div class="project-tile bot-left">
                     <h3>Advance Group</h3>
                     <p>Colombian company which offers technological services</p>
                     <img src="images/advance.jpg">
@@ -255,5 +325,8 @@
                 </div>
             </div>
         </section>
+        <footer id="footer">
+            Copyleft <script>document.write(new Date().getFullYear());</script> Made by Rina S.
+        </footer>
   	</body>
 </html>
